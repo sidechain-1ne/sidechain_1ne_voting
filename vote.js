@@ -5,10 +5,13 @@ let voteCounts = {
     3: 0
 };
 
+// Temporary array to store collected votes
+let collectedVotes = [];
+
 // Function to record votes
 function vote(option) {
     if (voteCounts[option] !== undefined) {
-        voteCounts[option] += 1;
+        collectedVotes.push(option); // Collect votes in an array
     }
 }
 
@@ -19,11 +22,13 @@ function resetVoteCounts() {
         2: 0,
         3: 0
     };
+    collectedVotes = []; // Clear the collected votes array
 }
 
 // Export the voteCounts object, vote function, and reset function
 module.exports = {
     voteCounts,
     vote,
-    resetVoteCounts
+    resetVoteCounts,
+    collectedVotes // Export the collectedVotes array
 };
