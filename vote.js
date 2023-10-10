@@ -12,8 +12,18 @@ function vote(option) {
     }
 }
 
-// Export the voteCounts object and vote function
+// Function to reset vote counts to 0
+function resetVoteCounts() {
+    voteCounts = {
+        1: 0,
+        2: 0,
+        3: 0
+    };
+}
+
+// Export the voteCounts object, vote function, and reset function
 module.exports = {
     voteCounts,
-    vote
+    vote,
+    resetVoteCounts
 };
